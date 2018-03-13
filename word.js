@@ -14,9 +14,13 @@ function Word(inputWord) {
         return ansStr;
     };
     this.checkLetters = function (inputLetter) {
+        var changed=false;
         for (k = 0; k < this.letters.length; k++) {
-            this.letters[k].checker(inputLetter);
+            if(this.letters[k].checker(inputLetter)){
+                changed=true;
+            }
         }
+        return changed;
     }
 }
 module.exports = Word;

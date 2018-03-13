@@ -10,10 +10,15 @@ function Letter(input) {
         }
     };
     this.checker = function (guess) {
+        var temp=false;
         if (this.input.toLowerCase() == guess.toLowerCase()) {
             this.guessed = true;
+            temp=true;
         }
+        else{
+            temp= false;
+        }
+        return temp;
     };
 }
-
 module.exports = Letter;
